@@ -3,6 +3,7 @@ import { Venue, Message, AppSettings } from '../types';
 import { speechService } from '../services/speechService';
 import { SIMULATED_STAFF_PROMPTS } from '../data/mockData';
 
+
 interface CommunicateScreenProps {
   venue: Venue;
   messages: Message[];
@@ -30,7 +31,8 @@ export const CommunicateScreen: React.FC<CommunicateScreenProps> = ({
 }) => {
   const [inputText, setInputText] = useState('');
   const [isSpeaking, setIsSpeaking] = useState(false);
-  const [isListeningMic, setIsListeningMic] = useState(true);
+  const [isListeningMic, setIsListeningMic] = useState(false);
+  
   const [fontSizeScale, setFontSizeScale] = useState<'standard' | 'large' | 'huge'>(
     settings.fontSize === 'extra-large' ? 'huge' : settings.fontSize === 'large' ? 'large' : 'standard'
   );
@@ -38,6 +40,7 @@ export const CommunicateScreen: React.FC<CommunicateScreenProps> = ({
   const [showVoiceSelector, setShowVoiceSelector] = useState(false);
   const [activeVoice, setActiveVoice] = useState(settings.voice);
   const [audioFeedbackNotice, setAudioFeedbackNotice] = useState<string | null>(null);
+  
 
   // Predictive Response Generator state (Premium MVP)
   const [predictiveReplies, setPredictiveReplies] = useState<string[]>([
@@ -213,9 +216,9 @@ export const CommunicateScreen: React.FC<CommunicateScreenProps> = ({
                     arrow_drop_down
                   </span>
                 </div>
-                <p className="text-[11px] text-[#006a61] font-semibold tracking-tight">
+                {/* <p className="text-[11px] text-[#006a61] font-semibold tracking-tight">
                   {venue.audioMode}
-                </p>
+                </p> */}
               </div>
             </button>
 
@@ -265,12 +268,17 @@ export const CommunicateScreen: React.FC<CommunicateScreenProps> = ({
               isListeningMic ? 'bg-[#006a61] animate-pulse' : 'bg-slate-400'
             }`}
           />
-          <span>{isListeningMic ? 'HearMe Talk (Live)' : 'Audio Jeda'}</span>
+          {/* <span>{isListeningMic ? 'HearMe Talk (Live)' : 'Audio Jeda'}</span> */}
+          <span>
+            {isListeningMic
+              ? 'Sedang Mendengarkan...'
+              : 'Mulai Mendengarkan'}
+          </span>
         </button>
       </div>
 
       {/* ================= ACTION BAR: DUAL FACING & INSTITUTION SOP ================= */}
-      <div className="grid grid-cols-2 gap-2">
+      {/* <div className="grid grid-cols-2 gap-2">
         <button
           onClick={onOpenClerkMirror}
           className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-2xl bg-blue-50 hover:bg-blue-100 border border-blue-200/70 text-blue-800 text-xs font-bold transition-all active:scale-98 shadow-2xs"
@@ -286,10 +294,12 @@ export const CommunicateScreen: React.FC<CommunicateScreenProps> = ({
           <span className="material-symbols-outlined text-[18px]">corporate_fare</span>
           <span>SOP &amp; Peta Lokasi</span>
         </button>
-      </div>
+      </div> */}
 
       {/* ================= 1. STAFF IS SPEAKING CARD (HearMe Talk MVP) ================= */}
+      {isListeningMic && (
       <div className="relative overflow-hidden rounded-3xl bg-white p-5 shadow-[0_4px_20px_rgba(20,27,43,0.06)] border border-slate-100 flex flex-col gap-3">
+        
         {/* Header */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2.5">
@@ -381,6 +391,7 @@ export const CommunicateScreen: React.FC<CommunicateScreenProps> = ({
           </div>
         )}
       </div>
+      )}
 
       {/* ================= 2. PREDICTIVE RESPONSE GENERATOR (Premium MVP) ================= */}
       <div className="flex flex-col gap-1.5">
@@ -388,12 +399,12 @@ export const CommunicateScreen: React.FC<CommunicateScreenProps> = ({
           <div className="flex items-center gap-1.5">
             <span className="material-symbols-outlined text-[16px] text-blue-600">psychology</span>
             <span className="text-[13px] font-bold text-[#141b2b]">
-              Predictive Response Generator
+              Saran Jawaban Cepat
             </span>
           </div>
-          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-800">
+          {/* <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-800">
             AI Cepat 1-Ketuk
-          </span>
+          </span> */}
         </div>
 
         {/* Predictive Response Pill Carousel */}
@@ -422,9 +433,9 @@ export const CommunicateScreen: React.FC<CommunicateScreenProps> = ({
               <span className="text-[12px] font-bold text-blue-900 uppercase tracking-wider">
                 Anda Merespons
               </span>
-              <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-blue-200/60 text-blue-900">
+              {/* <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-blue-200/60 text-blue-900">
                 HearMe Voice
-              </span>
+              </span> */}
             </div>
             <div className="flex items-center gap-1 text-[11px] font-semibold text-[#006a61]">
               <span className="material-symbols-outlined text-[15px]">volume_up</span>
@@ -451,15 +462,15 @@ export const CommunicateScreen: React.FC<CommunicateScreenProps> = ({
       )}
 
       {/* ================= 4. AUDIO DELIVERY FEEDBACK STRIP ================= */}
-      <div className="flex items-center justify-between px-4 py-2 rounded-2xl bg-teal-50 border border-teal-200/70 text-[#006f66] text-xs font-semibold shadow-2xs">
+      {/* <div className="flex items-center justify-between px-4 py-2 rounded-2xl bg-teal-50 border border-teal-200/70 text-[#006f66] text-xs font-semibold shadow-2xs">
         <div className="flex items-center gap-1.5">
           <span className="material-symbols-outlined text-[18px] text-[#006a61]">check_circle</span>
           <span>{audioFeedbackNotice || 'Audio tersambung ke speaker konter petugas'}</span>
         </div>
-        <div className="flex items-center gap-1 font-bold">
+        {/* <div className="flex items-center gap-1 font-bold">
           <span>Volume {settings.counterVolume}%</span>
-        </div>
-      </div>
+        </div> 
+      </div> */}
 
       {/* ================= 5. RESPONSE INPUT TRAY (HearMe Voice MVP) ================= */}
       <div className="rounded-3xl bg-white p-4 shadow-[0_6px_24px_rgba(20,27,43,0.06)] border border-slate-100 flex flex-col gap-3">

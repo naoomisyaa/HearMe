@@ -44,10 +44,10 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({ isOpen, onClose }) =
             <span className="font-medium">Assistive Voice Profile</span>
             <span className="font-semibold text-slate-900">{USER_PROFILE.preferredVoice}</span>
           </div>
-          <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+          {/* <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
             <span className="font-medium">Dual-Facing Mirror</span>
             <span className="font-semibold text-emerald-700">Calibrated (180° Inverted)</span>
-          </div>
+          </div> */}
           <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
             <span className="font-medium">Hearing Aid Induction Loop</span>
             <span className="font-semibold text-blue-700">T-Coil Ready (Telecoil)</span>

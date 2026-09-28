@@ -159,7 +159,7 @@ export const HistoryScreen: React.FC<HistoryScreenProps> = ({
                           className="text-[11px] text-purple-700 font-bold flex items-center gap-0.5 hover:underline"
                         >
                           <span className="material-symbols-outlined text-[14px]">apartment</span>
-                          Basis Data Institusi
+                          Data Institusi
                         </button>
                       )}
                     </div>

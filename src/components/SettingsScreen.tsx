@@ -184,7 +184,7 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = ({
             <div className="flex items-center gap-1.5">
               <p className="text-xs font-bold text-slate-900">Auto Detect Language</p>
               <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-amber-100 text-amber-900">
-                Future Dev
+                Soon
               </span>
             </div>
             <p className="text-[11px] text-slate-500">
@@ -194,7 +194,8 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = ({
           <input
             type="checkbox"
             checked={settings.autoDetectLanguage}
-            onChange={(e) => onUpdateSettings({ autoDetectLanguage: e.target.checked })}
+            disabled
+            // onChange={(e) => onUpdateSettings({ autoDetectLanguage: e.target.checked })}
             className="w-5 h-5 accent-blue-600 rounded cursor-pointer"
           />
         </div>
@@ -205,7 +206,7 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = ({
             <div className="flex items-center gap-1.5">
               <p className="text-xs font-bold text-slate-900">HearMe Vision &amp; Document Reader</p>
               <span className="px-1.5 py-0.2 rounded text-[9px] font-bold bg-amber-100 text-amber-900">
-                Future Dev
+                Soon
               </span>
             </div>
             <p className="text-[11px] text-slate-500">
@@ -231,8 +232,9 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = ({
           <input
             type="checkbox"
             checked={settings.screenReaderVoice}
-            onChange={(e) => onUpdateSettings({ screenReaderVoice: e.target.checked })}
-            className="w-5 h-5 accent-emerald-600 rounded cursor-pointer"
+            disabled
+            // onChange={(e) => onUpdateSettings({ screenReaderVoice: e.target.checked })}
+            className="w-5 h-5 accent-blue-600 rounded cursor-pointer"
           />
         </div>
 

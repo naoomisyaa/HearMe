@@ -34,9 +34,9 @@ export const InstitutionModal: React.FC<InstitutionModalProps> = ({
             <div>
               <div className="flex items-center gap-1.5">
                 <h3 className="text-base font-bold text-slate-900">Institution Customization</h3>
-                <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                {/* <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
                   MVP Active
-                </span>
+                </span> */}
               </div>
               <p className="text-[11px] text-slate-500">{venueName} · Basis Data Terhubung</p>
             </div>
@@ -94,7 +94,7 @@ export const InstitutionModal: React.FC<InstitutionModalProps> = ({
           </div>
 
           {/* SOP Pelayanan Disabilitas Internal */}
-          <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-2.5">
+          {/* <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-2.5">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-blue-600 text-[20px]">menu_book</span>
@@ -128,7 +128,7 @@ export const InstitutionModal: React.FC<InstitutionModalProps> = ({
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Penanggung Jawab Konter */}
           <div className="p-3 rounded-xl bg-slate-100 flex items-center justify-between text-xs text-slate-600">
