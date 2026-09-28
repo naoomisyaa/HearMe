@@ -1,6 +1,6 @@
 import { Venue, Phrase, Message } from '../types';
 
-export const HEARME_LOGO = "https://lh3.googleusercontent.com/aida/AEtjO1XJq-_Lw-4auoFzvdyRhsL638TEgl_tJ-qBLEa7jEr3wiAQUDXs7ibwM6yf71LVMaXMizv_XTMXa7ZVhu0KF2Rb-GXWsFWTqU4UTp0ET_Ci7xDi2szDIlOxT-UAU-PUNQI59KrHS5lezcFZwqRXPkyjA6GaiXc3t_y3iiJIYz9CsT4ulKZN-sznsHAMwDfCGdqjoppYTLUEvf5svPhTr3MUxhKbneUoVZsR74J7t97nrGevLdD6NtdjGN8";
+export const HEARME_LOGO = "/src/assets/images/zara_user_avatar_1790588736175.jpg";
 
 export const USER_PROFILE = {
   name: "Zara",
