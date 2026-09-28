@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f9f9ff;
+    color: #141b2b;
+  }
+}
+
+/* Custom scrollbar hiding for horizontal chip carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Equalizer bar animation */
+@keyframes eq-pulse {
+  0%, 100% { height: 6px; }
+  50% { height: 22px; }
+}
+
+.animate-eq-1 {
+  animation: eq-pulse 0.9s ease-in-out infinite;
+}
+.animate-eq-2 {
+  animation: eq-pulse 0.7s ease-in-out infinite 0.15s;
+}
+.animate-eq-3 {
+  animation: eq-pulse 1.1s ease-in-out infinite 0.3s;
+}
+.animate-eq-4 {
+  animation: eq-pulse 0.8s ease-in-out infinite 0.45s;
+}
+
+/* Subtle ripple for live microphone */
+@keyframes ping-slow {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+.animate-ping-slow {
+  animation: ping-slow 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}

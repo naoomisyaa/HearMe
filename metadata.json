@@ -1,0 +1,6 @@
+{
+  "name": "HearMe - Assistive Voice & Counter Communication",
+  "description": "Accessible, real-time live transcription, text-to-speech, and dual-facing clerk mirror communication assistant for deaf and hard-of-hearing individuals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
