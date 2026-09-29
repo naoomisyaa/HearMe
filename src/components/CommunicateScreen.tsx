@@ -439,7 +439,7 @@ export const CommunicateScreen: React.FC<CommunicateScreenProps> = ({
             </div>
             <div className="flex items-center gap-1 text-[11px] font-semibold text-[#006a61]">
               <span className="material-symbols-outlined text-[15px]">volume_up</span>
-              <span>Speaker Konter Aktif</span>
+              <span>Speaker Aktif</span>
             </div>
           </div>
 
@@ -455,7 +455,7 @@ export const CommunicateScreen: React.FC<CommunicateScreenProps> = ({
               className="flex items-center gap-1 text-blue-700 font-bold hover:underline active:scale-95"
             >
               <span className="material-symbols-outlined text-[16px]">replay</span>
-              Replay Suara Konter
+              Replay Suara
             </button>
           </div>
         </div>

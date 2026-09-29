@@ -33,7 +33,7 @@ export interface Venue {
   id: string;
   name: string;
   counter: string;
-  category: 'cafe' | 'pharmacy' | 'bakery' | 'transit' | 'retail' | 'hospital' | 'bank';
+  category: 'cafe' | 'pharmacy' | 'bakery' | 'transit' | 'retail' | 'hospital' | 'bank' | 'education';
   image: string;
   status: 'active' | 'completed';
   lastActive: string;
@@ -48,7 +48,7 @@ export interface Venue {
 export interface Phrase {
   id: string;
   text: string;
-  category: 'general' | 'cafe' | 'pharmacy' | 'emergency' | 'assistive';
+  category: 'general' | 'cafe' | 'pharmacy' | 'emergency' | 'assistive'| 'education';
   icon?: string;
 }
 

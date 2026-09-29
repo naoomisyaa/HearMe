@@ -65,15 +65,63 @@ class SpeechService {
     utterance.pitch = options.pitch ?? 1.0;
     utterance.volume = options.volume ?? 1.0;
 
+    // const voices = this.synth.getVoices();
+    // if (options.voiceName) {
+    //   const selected = voices.find((v) => v.name.includes(options.voiceName!) || v.lang.includes(options.voiceName!));
+    //   if (selected) utterance.voice = selected;
+    // } else {
+    //   // Default to English or local
+    //   // const naturalVoice = voices.find((v) => v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha')));
+    //   const indonesianVoice =
+    //   voices.find(v =>
+    //     v.lang.startsWith('id') &&
+    //     v.name.includes('Google')
+    //   ) ||
+    //   voices.find(v =>
+    //     v.lang.startsWith('id') &&
+    //     v.name.includes('Microsoft')
+    //   ) ||
+    //   voices.find(v => v.lang.startsWith('id'));
+
+    // if (indonesianVoice) {
+    //   utterance.voice = indonesianVoice;
+    // }
+    //   // if (naturalVoice) utterance.voice = naturalVoice;
+    // }
+
     const voices = this.synth.getVoices();
-    if (options.voiceName) {
-      const selected = voices.find((v) => v.name.includes(options.voiceName!) || v.lang.includes(options.voiceName!));
-      if (selected) utterance.voice = selected;
-    } else {
-      // Default to English or local
-      const naturalVoice = voices.find((v) => v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha')));
-      if (naturalVoice) utterance.voice = naturalVoice;
-    }
+
+console.log(
+  voices.filter(v => v.lang.startsWith('id'))
+);
+
+// if (options.voiceName) {
+//   const selected = voices.find(
+//     (v) =>
+//       v.name.includes(options.voiceName!) ||
+//       v.lang.includes(options.voiceName!)
+//   );
+
+//   if (selected) utterance.voice = selected;
+// } else {
+//   const indonesianVoice =
+//     voices.find(v => v.name === 'Google Bahasa Indonesia') ||
+//     voices.find(v => v.lang === 'id-ID');
+
+//   if (indonesianVoice) {
+//     utterance.voice = indonesianVoice;
+//   } 
+// }
+
+const indonesianVoice =
+  voices.find(v => v.name === 'Google Bahasa Indonesia') ||
+  voices.find(v => v.lang === 'id-ID');
+
+if (indonesianVoice) {
+  utterance.voice = indonesianVoice;
+}
+
+utterance.lang = 'id-ID';
 
     utterance.onend = () => {
       options.onEnd?.();

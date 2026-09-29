@@ -27,48 +27,56 @@ export const USER_PROFILE = {
 
 export const INITIAL_VENUES: Venue[] = [
   {
-    id: "kopi-ruang",
-    name: "Kopi Ruang",
-    counter: "Counter 01",
-    category: "cafe",
-    // image: "/src/assets/images/kopi_ruang_cafe_1790588654815.jpg",
-    image: "/images/kopi_ruang_cafe_1790588654815.jpg",
-    status: "active",
-    lastActive: "Today, 10:43 AM",
-    messagesCount: 4,
-    staffName: "Barista Dimas",
-    audioMode: "Binaural Assist & Induction Loop",
-    address: "Jl. Senopati No. 42, Kebayoran Baru",
-    suggestedPhrases: [
-      "Dine-in, tolong. Oat milk flat white tanpa gula.",
-      "Bisa tolong es batunya dipisah?",
-      "Bisa tolong ulangi dengan lebih pelan?",
-      "Bisa bayar dengan QRIS atau kartu debit?",
-    ],
-    institutionData: {
-      institutionCode: "INST-KR-01",
-      organizationName: "Kopi Ruang Specialty Coffee Roastery",
-      internalDatabaseLinked: true,
-      contactPerson: "Dimas (Store Manager)",
-      floorMap: {
-        room: "Lantai 1 - Counter Utama",
-        description: "Meja bar espresso terletak 3 meter tepat di depan pintu masuk utama berubin terakota. Toilet aksesibel di sebelah kiri koridor.",
-        counterLocation: "Kasir & Pick-up station nomor 1",
-      },
-      sopHighlights: [
-        {
-          serviceName: "SOP Layanan Prioritas Disabilitas",
-          flow: [
-            "1. Sambut dengan kontak mata dan gestur ramah.",
-            "2. Aktifkan terminal HearMe Clerk Mirror.",
-            "3. Konfirmasi pesanan dan preferensi alergi susu/sirup.",
-            "4. Serahkan tanda nomor meja getar (haptic buzzer).",
-          ],
-          priorityNotice: "Pelanggan disabilitas mendapatkan prioritas meja ramah kursi roda dan layanan pengantaran langsung ke meja.",
-        },
-      ],
+  id: "feb-unesa",
+  name: "Gedung FEB UNESA",
+  counter: "Layanan Akademik",
+  category: "education",
+  image: "/images/gedung_feb_unesa.png",
+  status: "active",
+  lastActive: "Today, 13:00",
+  messagesCount: 5,
+  staffName: "Staff Akademik FEB",
+  audioMode: "Accessibility Communication Assist",
+  address: "Fakultas Ekonomika dan Bisnis UNESA",
+
+  suggestedPhrases: [
+    "Saya ingin bertanya tentang jadwal konsultasi akademik.",
+    "Di mana lokasi pengambilan formulir administrasi?",
+    "Saya ingin mengurus surat aktif kuliah.",
+    "Mohon jelaskan alur pengajuan berkas akademik.",
+  ],
+
+  institutionData: {
+    institutionCode: "FEB-UNESA-ADM-03",
+    organizationName: "Fakultas Ekonomika dan Bisnis Universitas Negeri Surabaya",
+    internalDatabaseLinked: true,
+    contactPerson: "Petugas Akademik FEB",
+
+    floorMap: {
+      room: "Gedung FEB - Lantai 2",
+      description:
+        "Loket layanan akademik berada di lantai 2 dekat ruang administrasi mahasiswa.",
+      counterLocation:
+        "Loket Akademik dan Administrasi Mahasiswa",
     },
+
+    sopHighlights: [
+      {
+        serviceName: "SOP Layanan Administrasi Akademik",
+
+        flow: [
+          "1. Ambil nomor antrean administrasi.",
+          "2. Tunggu hingga nomor antrean dipanggil.",
+          "3. Serahkan berkas yang diperlukan kepada petugas.",
+          "4. Lakukan verifikasi data dan proses administrasi.",
+        ],
+
+        priorityNotice:
+          "Mahasiswa penyandang disabilitas dapat menggunakan HearMe untuk memperoleh instruksi layanan yang lebih mudah dipahami.",
+      },
+    ],
   },
+},
   {
     id: "central-pharmacy",
     name: "Central Pharmacy & Clinic",
@@ -198,6 +206,42 @@ export const INITIAL_VENUES: Venue[] = [
 ];
 
 export const INITIAL_MESSAGES: Record<string, Message[]> = {
+  "feb-unesa": [
+  {
+    id: "feb-1",
+    sender: "user",
+    text: "Saya ingin bertanya tentang jadwal konsultasi akademik.",
+    timestamp: "13:00",
+  },
+
+  {
+    id: "feb-2",
+    sender: "staff",
+    text: "Konsultasi akademik berikutnya dimulai pukul 13.00 di ruang konsultasi lantai dua.",
+    timestamp: "13:01",
+    confidence: 99,
+    detectedLang: "Bahasa Indonesia",
+  },
+
+  {
+    id: "feb-3",
+    sender: "user",
+    text: "Bagaimana prosedur pengurusan administrasi mahasiswa?",
+    timestamp: "13:02",
+  },
+
+  {
+    id: "feb-4",
+    sender: "staff",
+    text: "Silakan menuju lantai dua gedung fakultas untuk mengambil formulir administrasi, kemudian menunggu hingga nomor antrean Anda dipanggil dan kembali ke loket tiga.",
+    timestamp: "13:03",
+    confidence: 98,
+    detectedLang: "Bahasa Indonesia",
+
+    summary:
+      "1. Pergi ke lantai 2. 2. Ambil formulir administrasi. 3. Tunggu nomor antrean dipanggil. 4. Kembali ke loket 3.",
+  },
+],
   "kopi-ruang": [
     {
       id: "m-1",
@@ -289,6 +333,8 @@ export const DEFAULT_SAVED_PHRASES: Phrase[] = [
   { id: "p-5", text: "Saya seorang Tunarungu / Tunawicara", category: "assistive", icon: "hearing_disabled" },
   { id: "p-6", text: "Saya seorang Tunanetra, mohon panduan arah", category: "assistive", icon: "blind" },
   { id: "p-7", text: "Bisa bayar dengan QRIS / non-tunai?", category: "cafe", icon: "receipt" },
+  { id: "p-8", text: "Ringkas instruksi menjadi langkah-langkah yang mudah dipahami", category: "education", icon: "auto_awesome"
+},
 ];
 
 export const SAMPLE_OCR_DOCUMENTS = [
@@ -319,6 +365,11 @@ export const SAMPLE_OCR_DOCUMENTS = [
 ];
 
 export const SIMULATED_STAFF_PROMPTS = [
+  "Silakan menuju lantai dua untuk mengambil formulir administrasi.",
+  "Nomor antrean Anda akan dipanggil melalui layar informasi.",
+  "Jadwal konsultasi akademik berikutnya dimulai pukul 13.00.",
+  "Silakan kembali ke loket tiga setelah formulir selesai diisi.",
+  "Apakah ada dokumen tambahan yang ingin Anda urus hari ini?",
   "Mau pesan dine-in atau dibungkus takeaway hari ini?",
   "Total pesanannya Rp 42.000, silakan tap kartu debit atau QRIS di mesin ini.",
   "Mau ukuran Regular (12oz) atau Large (16oz)?",
