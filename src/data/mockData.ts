@@ -1,16 +1,29 @@
 import { Venue, Phrase, Message } from '../types';
 
-export const HEARME_LOGO = "/src/assets/images/zara_user_avatar_1790588736175.jpg";
+// export const HEARME_LOGO = "/src/assets/images/zara_user_avatar_1790588736175.jpg";
+
+// export const USER_PROFILE = {
+//   name: "Zara",
+//   fullName: "Zara Putri Sahriar",
+//   avatar: "/src/assets/images/zara_user_avatar_1790588736175.jpg",
+//   assistMode: "Tunarungu & Tunawicara Multi-Assist",
+//   hearingProfile: "Severe Bilateral Hearing Loss & Non-vocal",
+//   preferredVoice: "Natural Warm (Indonesian / English)",
+//   activeProfile: "tunarungu" as const,
+// };
+
+export const HEARME_LOGO = "/images/logo_hearme.png";
 
 export const USER_PROFILE = {
   name: "Zara",
   fullName: "Zara Putri Sahriar",
-  avatar: "/src/assets/images/zara_user_avatar_1790588736175.jpg",
+  avatar: "/images/zara_user_avatar_1790588736175.jpg",
   assistMode: "Tunarungu & Tunawicara Multi-Assist",
   hearingProfile: "Severe Bilateral Hearing Loss & Non-vocal",
   preferredVoice: "Natural Warm (Indonesian / English)",
   activeProfile: "tunarungu" as const,
 };
+
 
 export const INITIAL_VENUES: Venue[] = [
   {
@@ -18,7 +31,8 @@ export const INITIAL_VENUES: Venue[] = [
     name: "Kopi Ruang",
     counter: "Counter 01",
     category: "cafe",
-    image: "/src/assets/images/kopi_ruang_cafe_1790588654815.jpg",
+    // image: "/src/assets/images/kopi_ruang_cafe_1790588654815.jpg",
+    image: "/images/kopi_ruang_cafe_1790588654815.jpg",
     status: "active",
     lastActive: "Today, 10:43 AM",
     messagesCount: 4,
@@ -60,7 +74,8 @@ export const INITIAL_VENUES: Venue[] = [
     name: "Central Pharmacy & Clinic",
     counter: "Consultation Desk 03",
     category: "pharmacy",
-    image: "/src/assets/images/central_pharmacy_counter_1790588676302.jpg",
+    // image: "/src/assets/images/central_pharmacy_counter_1790588676302.jpg",
+    image: "/images/central_pharmacy_counter_1790588676302.jpg",
     status: "completed",
     lastActive: "Yesterday, 15:20",
     messagesCount: 6,
@@ -102,7 +117,8 @@ export const INITIAL_VENUES: Venue[] = [
     name: "Nordic Bakery & Artisan Cafe",
     counter: "Pick-up Counter",
     category: "bakery",
-    image: "/src/assets/images/nordic_bakery_shop_1790588692737.jpg",
+    // image: "/src/assets/images/nordic_bakery_shop_1790588692737.jpg",
+    image: "/images/nordic_bakery_shop_1790588692737.jpg",
     status: "completed",
     lastActive: "May 14, 09:15",
     messagesCount: 3,
@@ -142,7 +158,8 @@ export const INITIAL_VENUES: Venue[] = [
     name: "Stasiun MRT Bundaran HI",
     counter: "Customer Care Kiosk 02",
     category: "transit",
-    image: "/src/assets/images/metro_transit_kiosk_1790588713313.jpg",
+    // image: "/src/assets/images/metro_transit_kiosk_1790588713313.jpg",
+    image: "/images/metro_transit_kiosk_1790588713313.jpg",
     status: "completed",
     lastActive: "May 10, 18:40",
     messagesCount: 5,
